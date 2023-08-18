@@ -44,9 +44,9 @@ function rectangleArea(){
 function parallelogramArea(){
     // step-1: get base number
 
-    const baseValue = document.getElementById('parallelogram-base');
-    const baseValueString = baseValue.value;
-    const baseValueNumber = parseFloat(baseValueString);
+    const baseValue = getInputVlaue(fieldId);
+    console.log(baseValue);
+    
    
 
 
@@ -62,4 +62,15 @@ function parallelogramArea(){
 
     parallelogramArea.innerText = baseValueNumber * heightValueNumber;
 
+}
+
+
+// reduce get input field dinamic value
+
+function getInputVlaue(fieldId){
+    const inputField = document.getElementById(fieldId);
+    const inputFieldValue = inputField.value;
+    const value = parseFloat(inputFieldValue);
+
+    return value;
 }
