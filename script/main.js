@@ -24,44 +24,27 @@ function triangleArea(){
 function rectangleArea(){
     // step-1: get width number
 
-    const widthValue = document.getElementById('rectangle-width');
-    const widthValueString = widthValue.value;
-    const widthValueNumber = parseFloat(widthValueString);
+    const width = getInputVlaue('rectangle-width')
 
     // step-2: get length number
 
-    const lengthValue = document.getElementById('rectangle-length');
-    const lengthValueString = lengthValue.value;
-    const lengthValueNumber = parseFloat(lengthValueString);
+    const length = getInputVlaue('rectangle-length');
 
     // step-2: get area of this triangle
 
-    const rectangleArea = document.getElementById('rectangle-area');
+    const area = width * length;
 
-    rectangleArea.innerText = widthValueNumber * lengthValueNumber;
+    setElementInnerText('rectangle-area', area);
 }
 
 function parallelogramArea(){
-    // step-1: get base number
+     const base = getInputVlaue('parallelogram-base')
+     
+     const height = getInputVlaue('parallelogram-height');
 
-    const baseValue = getInputVlaue(fieldId);
-    console.log(baseValue);
-    
-   
+     const area = base * height;
 
-
-    // step-2: get height number
-
-    const heightValue = document.getElementById('parallelogram-height');
-    const heightValueString = heightValue.value;
-    const heightValueNumber = parseFloat(heightValueString);
-
-    // step-2: get area of this parallelogram
-
-    const parallelogramArea = document.getElementById('parallelogram-area');
-
-    parallelogramArea.innerText = baseValueNumber * heightValueNumber;
-
+     setElementInnerText('parallelogram-area', area);
 }
 
 
@@ -73,4 +56,11 @@ function getInputVlaue(fieldId){
     const value = parseFloat(inputFieldValue);
 
     return value;
+}
+
+// calculate area with dynamic function
+
+function setElementInnerText(textArea, area){
+    const element = document.getElementById(textArea);
+    element.innerText = area;
 }
